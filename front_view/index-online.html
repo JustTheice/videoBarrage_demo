@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>多人弹幕系统</title>
+		<link rel="stylesheet" type="text/css" href="/modules/bootstrap-4.4.1-dist/css/bootstrap-reboot.css"/>
+		<link rel="stylesheet" type="text/css" href="/modules/bootstrap-4.4.1-dist/css/bootstrap.css"/>
+		<script src="/modules/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/modules/bootstrap-4.4.1-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/online.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#wrap {}
+			#wrap #left {position: relative;overflow: hidden;}
+			#wrap #left>div{white-space: nowrap;}
+			#wrap #right .msg-list {height: 90%;}
+			#wrap #right .msg-control {height: 10%;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap" class="container-fluid">
+			<div class="row h-100">
+				<div class="col-xl-9 bg-dark h-100" id="left">
+					<video src="video/爱宠大机密2%20预告片_高清.mp4" class="w-100" controls></video>
+				</div>
+				<div class="col-xl-3 bg-danger" id="right">
+					<div class="msg-list bg-light"></div>
+					<div class="msg-control clearfix">
+						<input type="text" class="form-control w-75 float-left">
+						<button class="btn-primary btn w-25 float-left h-75" id="send">发送</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
