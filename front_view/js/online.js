@@ -1,7 +1,8 @@
 window.onload = function() {
 	//初始化
 	init();
-
+	
+	const socket = io();
 	let barrageArr = [];
 	let send = document.querySelector('#send'); //发送按钮
 	let video = document.querySelector('#left>video'); //视频组件

@@ -4,6 +4,8 @@ const port = 5000;
 const fs = require('fs');
 var path = require('path');
 const Barrage = require('./barrage.js');
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 app.use('/',express.static(path.join(__dirname,'./front_view/')));
 // //允许跨域
@@ -15,6 +17,13 @@ app.use('/',express.static(path.join(__dirname,'./front_view/')));
 //     if(req.method=="OPTIONS") res.send(200);/*让options请求快速返回*/
 //     else  next();
 // });
+
+io.on('connection', function(socket){
+  console.log('一个客户端建立了socket连接');
+	socket.on('disconnect', function(){
+		console.log('一个客户端断开了socket连接');
+	});
+});
 
 app.get('/', (req,res) => {
 	res.sendFile(path.join(__dirname,'./front_view/index-online.html'));
@@ -48,5 +57,5 @@ app.get('/getBarrages', (req,res) => {
 		);
 })
 
-app.listen(port, () => console.log(`server is running...`));
+server.listen(port, () => console.log(`server is running...`));
 
